@@ -71,7 +71,8 @@ def safe_fadvise(fd, offset, len, advice):
     if hasattr(os, 'posix_fadvise'):
         advice = getattr(os, 'POSIX_FADV_' + advice)
         try:
-            os.posix_fadvise(fd, offset, len, advice)
+            #os.posix_fadvise(fd, offset, len, advice)
+            pass
         except OSError:
             # usually, posix_fadvise can't fail for us, but there seem to
             # be failures when running borg under docker on ARM, likely due

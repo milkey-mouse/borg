@@ -214,7 +214,7 @@ chunker_fill(Chunker *c)
             overshoot = 0;
         }
 
-        posix_fadvise(c->fh, offset & ~pagemask, length - overshoot, POSIX_FADV_DONTNEED);
+        //posix_fadvise(c->fh, offset & ~pagemask, length - overshoot, POSIX_FADV_DONTNEED);
         #endif
 
         PyEval_RestoreThread(thread_state);
